@@ -18,8 +18,7 @@ function print(text) {
 }
 
 function loadBookDB() {
-	commands = " \
-	CREATE TABLE Players( 				\ 
+	commands = "CREATE TABLE Players( 		\ 
       		playerID integer,  			\
       		name varchar(255),                 	\
       		level int				\
@@ -63,7 +62,6 @@ function loadBookDB() {
   INSERT INTO GuildTreasury VALUES (10, 100); \
   INSERT INTO GuildTreasury VALUES (20, 100); \
   INSERT INTO GuildTreasury VALUES (20, 200); \
-	
 ";
 	worker.postMessage({ action: 'exec', sql: commands });
 }
