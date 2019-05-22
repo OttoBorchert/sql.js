@@ -18,25 +18,51 @@ function print(text) {
 }
 
 function loadBookDB() {
-	commands = "DROP TABLE IF EXISTS employees; \
-CREATE TABLE employees( id          integer,  name    text, \
-                          designation text,     manager integer, \
-                          hired_on    date,     salary  integer, \
-                          commission  float,    dept    integer); \
-  INSERT INTO employees VALUES (1,'JOHNSON','ADMIN',6,'1990-12-17',18000,NULL,4); \
-  INSERT INTO employees VALUES (2,'HARDING','MANAGER',9,'1998-02-02',52000,300,3); \
-  INSERT INTO employees VALUES (3,'TAFT','SALES I',2,'1996-01-02',25000,500,3); \
-  INSERT INTO employees VALUES (4,'HOOVER','SALES I',2,'1990-04-02',27000,NULL,3); \
-  INSERT INTO employees VALUES (5,'LINCOLN','TECH',6,'1994-06-23',22500,1400,4); \
-  INSERT INTO employees VALUES (6,'GARFIELD','MANAGER',9,'1993-05-01',54000,NULL,4); \
-  INSERT INTO employees VALUES (7,'POLK','TECH',6,'1997-09-22',25000,NULL,4); \
-  INSERT INTO employees VALUES (8,'GRANT','ENGINEER',10,'1997-03-30',32000,NULL,2); \
-  INSERT INTO employees VALUES (9,'JACKSON','CEO',NULL,'1990-01-01',75000,NULL,4); \
-  INSERT INTO employees VALUES (10,'FILLMORE','MANAGER',9,'1994-08-09',56000,NULL,2); \
-  INSERT INTO employees VALUES (11,'ADAMS','ENGINEER',10,'1996-03-15',34000,NULL,2); \
-  INSERT INTO employees VALUES (12,'WASHINGTON','ADMIN',6,'1998-04-16',18000,NULL,4); \
-  INSERT INTO employees VALUES (13,'MONROE','ENGINEER',10,'2000-12-03',30000,NULL,2); \
-  INSERT INTO employees VALUES (14,'ROOSEVELT','CPA',9,'1995-10-12',35000,NULL,1); \
+	commands = "CREATE TABLE Players( 				\ 
+      		playerID integer,  			\
+      		name    varchar(255),                 	\
+      		level int,				\
+	);						\
+	CREATE TABLE Guilds( 				\ 
+      		guildID integer,  			\
+      		name    varchar(255),                 	\
+      		level int,				\
+		dateCreated date			\
+		leader int				\
+		FOREIGN KEY leader Players(playerID)	\
+	);						\
+	ALTER TABLE Players ADD COLUMN guildMember INT; \
+	ALTER TABLE Players ADD COLUMN leadsGuild INT;	\
+	ALTER TABLE Players ADD FOREIGN KEY guildMember Guilds(guildID);	\
+	ALTER TABLE Players ADD FOREIGN KEY leadsGuild Guilds(guildID);	\
+	CREATE TABLE Items( 				\ 
+      		itemID integer,  			\
+      		name    varchar(255),                 	\
+      		minLevel int,				\
+		type VARCHAR(255)			\
+		handedness int				\
+	);						\
+	CREATE TABLE GuildTreasury ( 				\ 
+      		guildID integer,  			\
+      		itemID integer,                 	\
+		FOREIGN KEY guildID Guilds(guildID)	\
+		FOREIGN KEY itemID Items(itemID)	\
+	);						\	
+  INSERT INTO Players VALUES (1, 'Elyse', 5, NULL, NULL); \
+  INSERT INTO Players VALUES (2, 'Alyma', 5, NULL, NULL); \
+  INSERT INTO Guilds VALUES (10, 'Grey Warriors', 20, '2019-05-03', 1); \
+  INSERT INTO Guilds VALUES (20, 'Grey Warriors', 20, '2019-05-03', 1); \
+  UPDATE Players SET guildMember = 10 WHERE playerID = 1; \
+  UPDATE Players SET leadsGuild = 10 WHERE playerID = 1; \
+  UPDATE Players SET guildMember = 20 WHERE playerID = 2; \
+  UPDATE Players SET leadsGuild = 20 WHERE playerID = 2; \
+  INSERT INTO Items VALUES (100, 'Iron Sword', 5, 'sword', 1); \
+  INSERT INTO Items VALUES (200, 'Steel Battleaxe', 8, 'axe', 2); \
+  INSERT INTO Items VALUES (300, 'Steel Bow', 7, 'bow', 2); \
+  INSERT INTO GuildTreasury VALUES (10, 100); \
+  INSERT INTO GuildTreasury VALUES (20, 100); \
+  INSERT INTO GuildTreasury VALUES (20, 200); \
+	
 ";
 	worker.postMessage({ action: 'exec', sql: commands });
 }
