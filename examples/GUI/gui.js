@@ -18,11 +18,16 @@ function print(text) {
 }
 
 function loadBookDB() {
-	commands = "DROP TABLE IF EXISTS Players; \
-		CREATE TABLE Players( 		\
+	commands = "PRAGMA foreign_keys=OFF; \
+	DROP TABLE IF EXISTS Players; \
+	CREATE TABLE Players( 		\
       		playerID integer,  			\
       		name varchar(255),                 	\
-      		level integer				\
+      		level integer,				\
+      		guildMember integer,				\
+      		leadsGuild integer,				\
+		FOREIGN KEY (guildMember) REFERENCES Guilds(guildID)	\
+		FOREIGN KEY (leadsGuild) REFERENCES Guilds(guildID)	\
 	);						\
 	CREATE TABLE Guilds( 				\
       		guildID integer,  			\
@@ -34,8 +39,6 @@ function loadBookDB() {
 	);						\
 	ALTER TABLE Players ADD COLUMN guildMember INT; \
 	ALTER TABLE Players ADD COLUMN leadsGuild INT;	\
-	ALTER TABLE Players ADD FOREIGN KEY guildMember Guilds(guildID);	\
-	ALTER TABLE Players ADD FOREIGN KEY leadsGuild Guilds(guildID);	\
 	CREATE TABLE Items( 				\
       		itemID integer,  			\
       		name    varchar(255),                 	\
@@ -49,14 +52,10 @@ function loadBookDB() {
 		FOREIGN KEY (guildID) REFERENCES Guilds(guildID),	\
 		FOREIGN KEY (itemID) REFERENCES Items(itemID)	\
 	);						\
-  INSERT INTO Players VALUES (1, 'Elyse', 5, NULL, NULL); \
-  INSERT INTO Players VALUES (2, 'Alyma', 5, NULL, NULL); \
+  INSERT INTO Players VALUES (1, 'Elyse', 5, 10, 10); \
+  INSERT INTO Players VALUES (2, 'Alyma', 5, 20, 20); \
   INSERT INTO Guilds VALUES (10, 'Grey Warriors', 20, '2019-05-03', 1); \
   INSERT INTO Guilds VALUES (20, 'Grey Warriors', 20, '2019-05-03', 1); \
-  UPDATE Players SET guildMember = 10 WHERE playerID = 1; \
-  UPDATE Players SET leadsGuild = 10 WHERE playerID = 1; \
-  UPDATE Players SET guildMember = 20 WHERE playerID = 2; \
-  UPDATE Players SET leadsGuild = 20 WHERE playerID = 2; \
   INSERT INTO Items VALUES (100, 'Iron Sword', 5, 'sword', 1); \
   INSERT INTO Items VALUES (200, 'Steel Battleaxe', 8, 'axe', 2); \
   INSERT INTO Items VALUES (300, 'Steel Bow', 7, 'bow', 2); \
