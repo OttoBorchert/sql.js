@@ -37,8 +37,6 @@ function loadBookDB() {
 		leader integer,				\
 		FOREIGN KEY (leader) REFERENCES Players(playerID)	\
 	);						\
-	ALTER TABLE Players ADD COLUMN guildMember INT; \
-	ALTER TABLE Players ADD COLUMN leadsGuild INT;	\
 	CREATE TABLE Items( 				\
       		itemID integer,  			\
       		name    varchar(255),                 	\
