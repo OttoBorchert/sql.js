@@ -18,12 +18,13 @@ function print(text) {
 }
 
 function loadBookDB() {
-	commands = "CREATE TABLE Players( 		\ 
+	commands = "DROP IF EXISTS Players; \
+		CREATE TABLE Players( 		\
       		playerID integer,  			\
       		name varchar(255),                 	\
       		level int				\
 	);						\
-	CREATE TABLE Guilds( 				\ 
+	CREATE TABLE Guilds( 				\
       		guildID integer,  			\
       		name    varchar(255),                 	\
       		level int,				\
@@ -35,19 +36,19 @@ function loadBookDB() {
 	ALTER TABLE Players ADD COLUMN leadsGuild INT;	\
 	ALTER TABLE Players ADD FOREIGN KEY guildMember Guilds(guildID);	\
 	ALTER TABLE Players ADD FOREIGN KEY leadsGuild Guilds(guildID);	\
-	CREATE TABLE Items( 				\ 
+	CREATE TABLE Items( 				\
       		itemID integer,  			\
       		name    varchar(255),                 	\
       		minLevel int,				\
 		type VARCHAR(255),			\
 		handedness int				\
 	);						\
-	CREATE TABLE GuildTreasury ( 				\ 
+	CREATE TABLE GuildTreasury ( 				\
       		guildID integer,  			\
       		itemID integer,                 	\
 		FOREIGN KEY guildID Guilds(guildID),	\
 		FOREIGN KEY itemID Items(itemID)	\
-	);						\	
+	);						\
   INSERT INTO Players VALUES (1, 'Elyse', 5, NULL, NULL); \
   INSERT INTO Players VALUES (2, 'Alyma', 5, NULL, NULL); \
   INSERT INTO Guilds VALUES (10, 'Grey Warriors', 20, '2019-05-03', 1); \
