@@ -22,15 +22,15 @@ function loadBookDB() {
 		CREATE TABLE Players( 		\
       		playerID integer,  			\
       		name varchar(255),                 	\
-      		level int				\
+      		level integer				\
 	);						\
 	CREATE TABLE Guilds( 				\
       		guildID integer,  			\
       		name    varchar(255),                 	\
-      		level int,				\
+      		level integer,				\
 		dateCreated date,			\
-		leader int,				\
-		FOREIGN KEY leader Players(playerID)	\
+		leader integer,				\
+		FOREIGN KEY (leader) REFERENCES Players(playerID)	\
 	);						\
 	ALTER TABLE Players ADD COLUMN guildMember INT; \
 	ALTER TABLE Players ADD COLUMN leadsGuild INT;	\
@@ -39,15 +39,15 @@ function loadBookDB() {
 	CREATE TABLE Items( 				\
       		itemID integer,  			\
       		name    varchar(255),                 	\
-      		minLevel int,				\
+      		minLevel integer,				\
 		type VARCHAR(255),			\
 		handedness int				\
 	);						\
 	CREATE TABLE GuildTreasury ( 				\
       		guildID integer,  			\
       		itemID integer,                 	\
-		FOREIGN KEY guildID Guilds(guildID),	\
-		FOREIGN KEY itemID Items(itemID)	\
+		FOREIGN KEY (guildID) REFERENCES Guilds(guildID),	\
+		FOREIGN KEY (itemID) REFERENCES Items(itemID)	\
 	);						\
   INSERT INTO Players VALUES (1, 'Elyse', 5, NULL, NULL); \
   INSERT INTO Players VALUES (2, 'Alyma', 5, NULL, NULL); \
