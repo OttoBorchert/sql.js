@@ -18,7 +18,7 @@ function print(text) {
 }
 
 function loadBookDB() {
-	commands = "DROP IF EXISTS Players; \
+	commands = "DROP TABLE IF EXISTS Players; \
 		CREATE TABLE Players( 		\
       		playerID integer,  			\
       		name varchar(255),                 	\
