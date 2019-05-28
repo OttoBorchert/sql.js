@@ -66,7 +66,6 @@ function loadBookDB() {
   INSERT INTO GuildTreasury VALUES (20, 100); \
   INSERT INTO GuildTreasury VALUES (20, 200); \
   PRAGMA foreign_keys=ON; \
-
 ";
 	worker.postMessage({ action: 'exec', sql: commands });
 }
