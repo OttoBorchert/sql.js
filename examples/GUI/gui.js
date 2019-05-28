@@ -50,16 +50,23 @@ function loadBookDB() {
 		FOREIGN KEY (guildID) REFERENCES Guilds(guildID),	\
 		FOREIGN KEY (itemID) REFERENCES Items(itemID)	\
 	);						\
-  INSERT INTO Players VALUES (1, 'Elyse', 5, 10, 10); \
-  INSERT INTO Players VALUES (2, 'Alyma', 5, 20, 20); \
+  INSERT INTO Players VALUES (1, 'Elyse', 21, 10, 10); \
+  INSERT INTO Players VALUES (2, 'Alyma', 18, 20, 20); \
+  INSERT INTO Players VALUES (3, 'Kennis', 8, 10, NULL); \
+  INSERT INTO Players VALUES (4, 'Blothie', 2, 20, NULL); \
+  INSERT INTO Players VALUES (5, 'Radix', 9, 20, NULL); \
+  INSERT INTO Players VALUES (6, 'Apl', 1, NULL, NULL); \
   INSERT INTO Guilds VALUES (10, 'Grey Warriors', 20, '2019-05-03', 1); \
   INSERT INTO Guilds VALUES (20, 'Grey Warriors', 20, '2019-05-03', 1); \
   INSERT INTO Items VALUES (100, 'Iron Sword', 5, 'sword', 1); \
   INSERT INTO Items VALUES (200, 'Steel Battleaxe', 8, 'axe', 2); \
   INSERT INTO Items VALUES (300, 'Steel Bow', 7, 'bow', 2); \
+  INSERT INTO Items VALUES (400, 'Bronze Axe', 10, 'axe', 1); \
   INSERT INTO GuildTreasury VALUES (10, 100); \
   INSERT INTO GuildTreasury VALUES (20, 100); \
   INSERT INTO GuildTreasury VALUES (20, 200); \
+  PRAGMA foreign_keys=ON; \
+
 ";
 	worker.postMessage({ action: 'exec', sql: commands });
 }
