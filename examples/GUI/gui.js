@@ -54,7 +54,7 @@ function loadBookDB() {
   INSERT INTO Players VALUES (2, 'Alyma', 18, 20, 20); \
   INSERT INTO Players VALUES (3, 'Kennis', 8, 10, NULL); \
   INSERT INTO Players VALUES (4, 'Blothie', 2, 20, NULL); \
-  INSERT INTO Players VALUES (5, 'Radix', 9, 20, NULL); \
+  INSERT INTO Players VALUES (5, 'Radix', 8, 20, NULL); \
   INSERT INTO Players VALUES (6, 'Apl', 1, NULL, NULL); \
   INSERT INTO Guilds VALUES (10, 'Grey Warriors', 20, '2019-05-03', 1); \
   INSERT INTO Guilds VALUES (20, 'Grey Warriors', 20, '2019-05-03', 1); \
