@@ -105,6 +105,7 @@ function execute(commands) {
 	}
 	
 	worker.postMessage({ action: 'exec', sql: commands });
+	outputElm.textContent = "Fetching results...";
 }
 
 // Create an HTML table
