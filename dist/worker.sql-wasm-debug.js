@@ -6946,7 +6946,8 @@ if (typeof importScripts === 'function') {
           }
           return postMessage({
             'id': data['id'],
-            'results': db.exec(data['sql'])
+            'results': db.exec(data['sql']),
+			'error': db.error
           });
         case 'each':
           if (db === null) {
