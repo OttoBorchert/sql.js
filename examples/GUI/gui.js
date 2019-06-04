@@ -26,6 +26,7 @@ function loadBookDB() {
       		level integer,				\
       		guildMember integer,				\
       		leadsGuild integer,				\
+      		coins integer,				\
 		FOREIGN KEY (guildMember) REFERENCES Guilds(guildID)	\
 		FOREIGN KEY (leadsGuild) REFERENCES Guilds(guildID)	\
 	);						\
@@ -50,12 +51,13 @@ function loadBookDB() {
 		FOREIGN KEY (guildID) REFERENCES Guilds(guildID),	\
 		FOREIGN KEY (itemID) REFERENCES Items(itemID)	\
 	);						\
-  INSERT INTO Players VALUES (1, 'Elyse', 21, 10, 10); \
-  INSERT INTO Players VALUES (2, 'Alyma', 18, 20, 20); \
-  INSERT INTO Players VALUES (3, 'Kennis', 8, 10, NULL); \
-  INSERT INTO Players VALUES (4, 'Blothie', 2, 20, NULL); \
-  INSERT INTO Players VALUES (5, 'Radix', 8, 20, NULL); \
-  INSERT INTO Players VALUES (6, 'Apl', 1, NULL, NULL); \
+  INSERT INTO Players VALUES (1, 'Elyse', 21, 10, 10, 1234); \
+  INSERT INTO Players VALUES (2, 'Alyma', 18, 20, 20, 2133); \
+  INSERT INTO Players VALUES (3, 'Kennis', 8, 10, NULL, 553); \
+  INSERT INTO Players VALUES (4, 'Blothie', 2, 20, NULL, 120); \
+  INSERT INTO Players VALUES (5, 'Radix', 8, 20, NULL, 429); \
+  INSERT INTO Players VALUES (6, 'Apl', 1, NULL, NULL, 15); \
+  INSERT INTO Players VALUES (7, 'Babbage', 2, 20, NULL, 111); \
   INSERT INTO Guilds VALUES (10, 'Grey Warriors', 20, '2019-05-03', 1); \
   INSERT INTO Guilds VALUES (20, 'Shocking Power', 18, '2019-05-04', 2); \
   INSERT INTO Guilds VALUES (30, 'Shimmering Light', 1, '2019-04-19', NULL); \
