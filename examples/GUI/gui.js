@@ -97,12 +97,14 @@ function execute(commands) {
 		}
 		toc("Displaying results");
 	}
+	
+	worker.postMessage({ action: 'exec', sql: commands });
 	try {
-		worker.postMessage({ action: 'exec', sql: commands });
-	} catch (err) {
-		error(err);
+    		let response = await exec();
+		outputElm.textContent = "Fetching results...";
+	} catch(e) {
+    		console.log(e);
 	}
-	outputElm.textContent = "Fetching results...";
 }
 
 // Create an HTML table
