@@ -698,7 +698,8 @@ Database = (function() {
       return null;
     } else {
       errmsg = sqlite3_errmsg(this.db);
-      throw new Error(errmsg);
+      this.error = errmsg;
+      //throw new Error(errmsg);
     }
   };
 
