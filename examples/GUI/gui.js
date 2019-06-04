@@ -6,7 +6,7 @@ var dbFileElm = document.getElementById('dbfile');
 var savedbElm = document.getElementById('savedb');
 
 // Start the worker in which sql.js will run
-var worker = new Worker("../../dist/worker.sql-wasm-debug.js");
+var worker = new Worker("../../dist/worker.sql-wasm.js");
 worker.onerror = error;
 
 // Open a database
@@ -97,7 +97,11 @@ function execute(commands) {
 		}
 		toc("Displaying results");
 	}
-	worker.postMessage({ action: 'exec', sql: commands });
+	try {
+		worker.postMessage({ action: 'exec', sql: commands });
+	} catch (err) {
+		error(err);
+	}
 	outputElm.textContent = "Fetching results...";
 }
 
@@ -145,10 +149,12 @@ var editor = CodeMirror.fromTextArea(commandsElm, {
 	autofocus: true,
 	extraKeys: {
 		"Ctrl-Enter": execEditorContents,
-		"Ctrl-S": savedb,
+		//"Ctrl-S": savedb,
 	}
 });
 
+/*
+// Not loading or saving anymore
 // Load a db from a file
 dbFileElm.onchange = function () {
 	var f = dbFileElm.files[0];
@@ -192,3 +198,4 @@ function savedb() {
 	worker.postMessage({ action: 'export' });
 }
 savedbElm.addEventListener("click", savedb, true);
+*/
