@@ -87,6 +87,12 @@ function noerror() {
 function execute(commands) {
 	tic();
 	worker.onmessage = function (event) {
+		if (event.data.error)
+		{
+			event.message = event.data.error;
+			error(event);
+		}
+
 		var results = event.data.results;
 		toc("Executing SQL");
 
