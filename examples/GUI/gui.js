@@ -105,12 +105,6 @@ function execute(commands) {
 	}
 	
 	worker.postMessage({ action: 'exec', sql: commands });
-	try {
-    		let response = await exec();
-		outputElm.textContent = "Fetching results...";
-	} catch(e) {
-    		console.log(e);
-	}
 }
 
 // Create an HTML table
