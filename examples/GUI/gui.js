@@ -58,6 +58,17 @@ function loadBookDB() {
   INSERT INTO Players VALUES (5, 'Radix', 8, 20, NULL, 429); \
   INSERT INTO Players VALUES (6, 'Apl', 1, NULL, NULL, 15); \
   INSERT INTO Players VALUES (7, 'Babbage', 2, 20, NULL, 111); \
+  INSERT INTO Players VALUES (8, 'Cait', 11, NULL, NULL, 742); \
+  INSERT INTO Players VALUES (9, 'Mintee', 19, 30, 30, 889); \
+  INSERT INTO Players VALUES (10, 'Wraithse', 12, 30, NULL, 951); \
+  INSERT INTO Players VALUES (11, 'Plucki', 11, 40, 40, 112); \
+  INSERT INTO Players VALUES (12, 'Sava', 15, NULL, NULL, 1021); \
+  INSERT INTO Players VALUES (13, 'Vera', 9, 50, 50, 831); \
+  INSERT INTO Players VALUES (14, 'Aventop', 3, 60, NULL, 1); \
+  INSERT INTO Players VALUES (15, 'Kylomer', 4, 60, NULL, 104); \
+  INSERT INTO Players VALUES (16, 'Rydomin', 6, 60, 60, 114); \
+  INSERT INTO Players VALUES (17, 'Sulin', 5, 60, 60, 117); \
+  INSERT INTO Players VALUES (18, 'Xylo', 1, 70, 70, 1); \
   INSERT INTO Guilds VALUES (10, 'Grey Warriors', 20, '2019-05-03', 1); \
   INSERT INTO Guilds VALUES (20, 'Shocking Power', 18, '2019-05-04', 2); \
   INSERT INTO Guilds VALUES (30, 'Shimmering Light', 1, '2019-04-19', NULL); \
