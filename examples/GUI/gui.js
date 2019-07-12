@@ -22,9 +22,9 @@ function loadBookDB() {
 	DROP TABLE IF EXISTS Players; \
 	CREATE TABLE Players( 		\
       		playerID integer,  			\
-      		name varchar(255),                 	\
-      		level integer,				\
-      		guildMember integer,				\
+      		playerName varchar(255),                 	\
+      		playerLevel integer,				\
+      		guildID integer,				\
       		leadsGuild integer,				\
       		coins integer,				\
 		FOREIGN KEY (guildMember) REFERENCES Guilds(guildID)	\
@@ -32,15 +32,15 @@ function loadBookDB() {
 	);						\
 	CREATE TABLE Guilds( 				\
       		guildID integer,  			\
-      		name    varchar(255),                 	\
-      		level integer,				\
+      		guildName    varchar(255),                 	\
+      		guildLevel integer,				\
 		dateCreated date,			\
 		leader integer,				\
 		FOREIGN KEY (leader) REFERENCES Players(playerID)	\
 	);						\
 	CREATE TABLE Items( 				\
       		itemID integer,  			\
-      		name    varchar(255),                 	\
+      		itemName    varchar(255),                 	\
       		minLevel integer,				\
 		type VARCHAR(255),			\
 		handedness int				\
