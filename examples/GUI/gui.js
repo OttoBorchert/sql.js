@@ -48,6 +48,7 @@ function loadBookDB() {
 	CREATE TABLE GuildTreasury ( 				\
       		guildID integer,  			\
       		itemID integer,                 	\
+		quantity integer,			\
 		FOREIGN KEY (guildID) REFERENCES Guilds(guildID),	\
 		FOREIGN KEY (itemID) REFERENCES Items(itemID)	\
 	);						\
@@ -82,9 +83,9 @@ function loadBookDB() {
   INSERT INTO Items VALUES (300, 'Steel Bow', 7, 'bow', 2); \
   INSERT INTO Items VALUES (400, 'Bronze Axe', 10, 'axe', 1); \
   INSERT INTO Items VALUES (500, 'Bronze Bow', 10, 'bow', 2); \
-  INSERT INTO GuildTreasury VALUES (10, 100); \
-  INSERT INTO GuildTreasury VALUES (20, 100); \
-  INSERT INTO GuildTreasury VALUES (20, 200); \
+  INSERT INTO GuildTreasury VALUES (10, 100, 1); \
+  INSERT INTO GuildTreasury VALUES (20, 100, 1); \
+  INSERT INTO GuildTreasury VALUES (20, 200, 1); \
   PRAGMA foreign_keys=ON; \
 ";
 	worker.postMessage({ action: 'exec', sql: commands });
