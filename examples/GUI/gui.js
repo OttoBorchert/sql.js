@@ -48,7 +48,7 @@ function loadBookDB() {
 	CREATE TABLE GuildTreasury ( 				\
       		guildID integer,  			\
       		itemID integer,                 	\
-		quantity integer,			\
+		num integer,			\
 		FOREIGN KEY (guildID) REFERENCES Guilds(guildID),	\
 		FOREIGN KEY (itemID) REFERENCES Items(itemID)	\
 	);						\
