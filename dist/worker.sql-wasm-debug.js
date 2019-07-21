@@ -259,7 +259,7 @@ Statement = (function() {
           results1.push(this.getBlob(field));
           break;
         default:
-          results1.push("NULL");
+          results1.push(null);
       }
     }
     return results1;
@@ -565,9 +565,10 @@ Database = (function() {
         if (curresult === null) {
           curresult = {
             'columns': stmt['getColumnNames'](),
-            'values': ["NULL"]
+            'values': []
           };
 	  console.log("test null 2");
+	  console.log(results);
           results.push(curresult);
         }
         curresult['values'].push(stmt['get']());
