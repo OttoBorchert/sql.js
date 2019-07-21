@@ -565,8 +565,9 @@ Database = (function() {
         if (curresult === null) {
           curresult = {
             'columns': stmt['getColumnNames'](),
-            'values': []
+            'values': ["NULL"]
           };
+	  console.log("test null 2");
           results.push(curresult);
         }
         curresult['values'].push(stmt['get']());
