@@ -259,7 +259,7 @@ Statement = (function() {
           results1.push(this.getBlob(field));
           break;
         default:
-          results1.push(null);
+          results1.push("NULL");
       }
     }
     return results1;
