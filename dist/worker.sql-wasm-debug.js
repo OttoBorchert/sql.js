@@ -567,8 +567,6 @@ Database = (function() {
             'columns': stmt['getColumnNames'](),
             'values': []
           };
-	  console.log("test null 2");
-	  console.log(results);
           results.push(curresult);
         }
         curresult['values'].push(stmt['get']());
