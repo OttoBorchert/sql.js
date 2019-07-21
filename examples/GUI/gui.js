@@ -112,6 +112,7 @@ function execute(commands) {
 		}
 
 		var results = event.data.results;
+		console.log(results);
 		toc("Executing SQL");
 
 		tic();
