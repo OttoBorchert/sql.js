@@ -97,6 +97,7 @@ function error(e) {
 }
 
 function noerror() {
+	errorElm.textContent = "";
 	errorElm.style.height = '0';
 }
 
