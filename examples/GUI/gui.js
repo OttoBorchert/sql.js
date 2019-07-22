@@ -97,8 +97,9 @@ function error(e) {
 }
 
 function noerror() {
-	errorElm.textContent = "";
+	console.log("removing error");
 	errorElm.style.height = '0';
+	errorElm.textContent = " ";
 }
 
 // Run a command in the database
@@ -113,7 +114,6 @@ function execute(commands) {
 		}
 
 		var results = event.data.results;
-		console.log(results);
 		toc("Executing SQL");
 
 		tic();
