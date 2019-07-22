@@ -115,7 +115,13 @@ function execute(commands) {
 			event.message = event.data.error;
 			error(event);
 			//Clearing the error for the next query
+			console.log("BEFORE");
+			console.log(event);
 			event.data.error = undefined;
+			event.message = undefined;
+			console.log("AFTER");
+			console.log(event);
+
 		}
 
 		var results = event.data.results;
