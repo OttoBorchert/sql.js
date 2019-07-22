@@ -97,6 +97,7 @@ function error(e) {
 }
 
 function noerror() {
+	console.log(event);
 	if (event != null && event.data != null)
 		event.data.error = undefined;
 	console.log("removing error");
@@ -113,6 +114,8 @@ function execute(commands) {
 		{
 			event.message = event.data.error;
 			error(event);
+			//Clearing the error for the next query
+			event.data.error = undefined;
 		}
 
 		var results = event.data.results;
