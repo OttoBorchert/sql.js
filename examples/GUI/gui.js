@@ -137,7 +137,7 @@ var tableCreate = function () {
 		});
 		vals.map(x => (x === null) ? "NULL" : x);
 		console.log("AFTER");
-		array.forEach(function (item, index) {
+		vals.forEach(function (item, index) {
 			console.log(item, index);
 		});
 
