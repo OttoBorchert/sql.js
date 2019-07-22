@@ -132,7 +132,7 @@ var tableCreate = function () {
 	function valconcat(vals, tagName) {
 		if (vals.length === 0) return '';
 		console.log("BEFORE");
-		array.forEach(function (item, index) {
+		vals.forEach(function (item, index) {
 			console.log(item, index);
 		});
 		vals.map(x => (x === null) ? "NULL" : x);
