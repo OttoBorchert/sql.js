@@ -130,6 +130,7 @@ function execute(commands) {
 // Create an HTML table
 var tableCreate = function () {
 	function valconcat(vals, tagName) {
+		console.log(vals);
 		if (vals.length === 0) return '';
 		var open = '<' + tagName + '>', close = '</' + tagName + '>';
 		return open + vals.join(close + open) + close;
