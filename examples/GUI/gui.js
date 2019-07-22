@@ -130,9 +130,17 @@ function execute(commands) {
 // Create an HTML table
 var tableCreate = function () {
 	function valconcat(vals, tagName) {
-		console.log(vals);
 		if (vals.length === 0) return '';
+		console.log("BEFORE");
+		array.forEach(function (item, index) {
+			console.log(item, index);
+		});
 		vals.map(x => (x === null) ? "NULL" : x);
+		console.log("AFTER");
+		array.forEach(function (item, index) {
+			console.log(item, index);
+		});
+
 		var open = '<' + tagName + '>', close = '</' + tagName + '>';
 		return open + vals.join(close + open) + close;
 	}
