@@ -132,6 +132,7 @@ var tableCreate = function () {
 	function valconcat(vals, tagName) {
 		console.log(vals);
 		if (vals.length === 0) return '';
+		vals.map(x => (x === null) ? "NULL" : x);
 		var open = '<' + tagName + '>', close = '</' + tagName + '>';
 		return open + vals.join(close + open) + close;
 	}
