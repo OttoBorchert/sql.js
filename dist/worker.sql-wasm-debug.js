@@ -695,6 +695,7 @@ Database = (function() {
   Database.prototype.handleError = function(returnCode) {
     var errmsg;
     if (returnCode === SQLite.OK) {
+      this.error = undefined;
       return null;
     } else {
       errmsg = sqlite3_errmsg(this.db);
