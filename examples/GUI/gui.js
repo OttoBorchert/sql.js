@@ -98,8 +98,8 @@ function error(e) {
 
 function noerror() {
 	console.log("removing error");
-	errorElm.style.height = '0';
-	errorElm.textContent = " ";
+	errorElm.style.height = '2em';
+	errorElm.textContent = "Why isn't this changing?";
 }
 
 // Run a command in the database
