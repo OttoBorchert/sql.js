@@ -103,6 +103,7 @@ function noerror() {
 
 // Run a command in the database
 function execute(commands) {
+	noerror();
 	tic();
 	worker.onmessage = function (event) {
 		if (event.data.error)
@@ -131,20 +132,12 @@ function execute(commands) {
 var tableCreate = function () {
 	function valconcat(vals, tagName) {
 		if (vals.length === 0) return '';
-		console.log("BEFORE");
-		vals.forEach(function (item, index) {
-			console.log(item, index);
-		});
+		// Replace empty null values with NULL text
 		for (var i = 0; i < vals.length; i++) {
 			if (vals[i] === null) {
 				vals[i] = "NULL";
 			}
 		}
-		vals.map(x => (x === null) ? "NULL" : x);
-		console.log("AFTER");
-		vals.forEach(function (item, index) {
-			console.log(item, index);
-		});
 
 		var open = '<' + tagName + '>', close = '</' + tagName + '>';
 		return open + vals.join(close + open) + close;
