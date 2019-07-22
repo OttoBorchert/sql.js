@@ -695,7 +695,6 @@ Database = (function() {
   Database.prototype.handleError = function(returnCode) {
     var errmsg;
     if (returnCode === SQLite.OK) {
-      this.error = undefined;
       return null;
     } else {
       errmsg = sqlite3_errmsg(this.db);
@@ -6942,6 +6941,7 @@ if (typeof importScripts === 'function') {
           if (db === null) {
             createDb();
           }
+	  db.error = undefined;
           if (!data['sql']) {
             throw 'exec: Missing query string';
           }
