@@ -68,6 +68,7 @@ function loadBookDB() {
   INSERT INTO Players VALUES (16, 'Rydomin', 6, 60, 114); \
   INSERT INTO Players VALUES (17, 'Sulin', 5, 60, 117); \
   INSERT INTO Players VALUES (18, 'Xylo', 1, 70, 2); \
+  INSERT INTO Players VALUES (19, 'Penni', 4, 20, 201); \
   INSERT INTO Guilds VALUES (10, 'Grey Warriors', 20, '2019-05-03', 1); \
   INSERT INTO Guilds VALUES (20, 'Shocking Power', 18, '2019-05-04', 2); \
   INSERT INTO Guilds VALUES (30, 'Shimmering Light', 1, '2019-04-19', 9); \
