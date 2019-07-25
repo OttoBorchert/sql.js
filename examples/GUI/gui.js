@@ -81,9 +81,16 @@ function loadBookDB() {
   INSERT INTO Items VALUES (300, 'Steel Bow', 7, 'bow', 2); \
   INSERT INTO Items VALUES (400, 'Bronze Axe', 10, 'axe', 1); \
   INSERT INTO Items VALUES (500, 'Bronze Bow', 10, 'bow', 2); \
+  INSERT INTO Items VALUES (600, 'Silver Dagger', 15, 'dagger', 1); \
+  INSERT INTO Items VALUES (700, 'Steel Dagger', 1, 'dagger', 1); \
+  INSERT INTO Items VALUES (800, 'Iron Staff', 2, 'staff', 2); \
+  INSERT INTO Items VALUES (900, 'Dwarven Axe', 18, 'axe', 1); \
   INSERT INTO GuildTreasury VALUES (10, 100, 1); \
   INSERT INTO GuildTreasury VALUES (20, 100, 1); \
   INSERT INTO GuildTreasury VALUES (20, 200, 1); \
+  INSERT INTO GuildTreasury VALUES (50, 200, 2); \
+  INSERT INTO GuildTreasury VALUES (50, 400, 1); \
+  INSERT INTO GuildTreasury VALUES (50, 900, 3); \
   PRAGMA foreign_keys=ON; \
 ";
 	worker.postMessage({ action: 'exec', sql: commands });
