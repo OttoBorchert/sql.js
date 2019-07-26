@@ -18,7 +18,7 @@ function print(text) {
 }
 
 function loadBookDB() {
-	commands = "PRAGMA foreign_keys=on; \
+	commands = "PRAGMA foreign_keys=off; \
  	DROP TABLE IF EXISTS TradeTransactions; \
 	DROP TABLE IF EXISTS GuildTreasury; \
 	DROP TABLE IF EXISTS Items; \
@@ -157,6 +157,7 @@ function loadBookDB() {
   INSERT INTO TradeTransactions VALUES (28, 1, 17, '2019-06-21 14:01:33', 900); \
   INSERT INTO TradeTransactions VALUES (29, 5, 1, '2019-07-12 10:01:30', 700); \
   INSERT INTO TradeTransactions VALUES (30, 7, 3, '2019-07-13 10:01:33', 700); \
+  PRAGMA foreign_keys=on; \
 ";
 	worker.postMessage({ action: 'exec', sql: commands });
 }
