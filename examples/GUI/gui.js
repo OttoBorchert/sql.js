@@ -18,7 +18,8 @@ function print(text) {
 }
 
 function loadBookDB() {
-	commands = "DROP TABLE IF EXISTS TradeTransactions; \
+	commands = "PRAGMA foreign_keys=on; \
+ 	DROP TABLE IF EXISTS TradeTransactions; \
 	DROP TABLE IF EXISTS GuildTreasury; \
 	DROP TABLE IF EXISTS Items; \
 	DROP TABLE IF EXISTS Guilds; \
