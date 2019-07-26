@@ -18,10 +18,13 @@ function print(text) {
 }
 
 function loadBookDB() {
-	commands = "PRAGMA foreign_keys=OFF; \
+	commands = "DROP TABLE IF EXISTS TradeTransactions; \
+	DROP TABLE IF EXISTS GuildTreasury; \
+	DROP TABLE IF EXISTS Items; \
+	DROP TABLE IF EXISTS Guilds; \
 	DROP TABLE IF EXISTS Players; \
 	CREATE TABLE Players( 		\
-      		playerID integer,  			\
+      		playerID integer primary key,  			\
       		playerName varchar(255),                 	\
       		playerLevel integer,				\
       		guildID integer,				\
@@ -29,7 +32,7 @@ function loadBookDB() {
 		FOREIGN KEY (guildID) REFERENCES Guilds(guildID)	\
 	);						\
 	CREATE TABLE Guilds( 				\
-      		guildID integer,  			\
+      		guildID integer primary key,  			\
       		guildName    varchar(255),                 	\
       		guildLevel integer,				\
 		dateCreated date,			\
@@ -37,7 +40,7 @@ function loadBookDB() {
 		FOREIGN KEY (leader) REFERENCES Players(playerID)	\
 	);						\
 	CREATE TABLE Items( 				\
-      		itemID integer,  			\
+      		itemID integer primary key,  			\
       		itemName    varchar(255),                 	\
       		minLevel integer,				\
 		type VARCHAR(255),			\
@@ -48,6 +51,16 @@ function loadBookDB() {
       		itemID integer,                 	\
 		quantity integer,			\
 		FOREIGN KEY (guildID) REFERENCES Guilds(guildID),	\
+		FOREIGN KEY (itemID) REFERENCES Items(itemID)	\
+	);						\
+	CREATE TABLE TradeTransactions ( 				\
+		transactionID integer primary key,				\
+      		sendingPlayerID integer,  			\
+      		receivingPlayerID integer,                 	\
+		transactionTime datetime,			\
+		itemID integer,					\
+		FOREIGN KEY (sendingPlayerID) REFERENCES Players(playerID),	\
+		FOREIGN KEY (receivingPlayerID) REFERENCES Players(playerID),	\
 		FOREIGN KEY (itemID) REFERENCES Items(itemID)	\
 	);						\
   INSERT INTO Players VALUES (1, 'Elyse', 21, 10, 1234); \
@@ -92,7 +105,7 @@ function loadBookDB() {
   INSERT INTO GuildTreasury VALUES (50, 200, 2); \
   INSERT INTO GuildTreasury VALUES (50, 400, 1); \
   INSERT INTO GuildTreasury VALUES (50, 900, 3); \
-  PRAGMA foreign_keys=ON; \
+  INSERT INTO TradeTransactions VALUES (1, 2, 4, '2019-04-02 10:01.032', 300); \
 ";
 	worker.postMessage({ action: 'exec', sql: commands });
 }
