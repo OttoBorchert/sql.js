@@ -99,13 +99,63 @@ function loadBookDB() {
   INSERT INTO Items VALUES (700, 'Steel Dagger', 1, 'dagger', 1); \
   INSERT INTO Items VALUES (800, 'Iron Staff', 2, 'staff', 2); \
   INSERT INTO Items VALUES (900, 'Dwarven Axe', 18, 'axe', 1); \
-  INSERT INTO GuildTreasury VALUES (10, 100, 1); \
-  INSERT INTO GuildTreasury VALUES (20, 100, 1); \
-  INSERT INTO GuildTreasury VALUES (20, 200, 1); \
-  INSERT INTO GuildTreasury VALUES (50, 200, 2); \
+  INSERT INTO GuildTreasury VALUES (10, 300, 3); \
+  INSERT INTO GuildTreasury VALUES (10, 900, 1); \
+  INSERT INTO GuildTreasury VALUES (20, 700, 2); \
+  INSERT INTO GuildTreasury VALUES (20, 200, 11); \
+  INSERT INTO GuildTreasury VALUES (70, 200, 2); \
+  INSERT INTO GuildTreasury VALUES (60, 100, 6); \
+  INSERT INTO GuildTreasury VALUES (10, 100, 12); \
   INSERT INTO GuildTreasury VALUES (50, 400, 1); \
+  INSERT INTO GuildTreasury VALUES (30, 200, 14); \
+  INSERT INTO GuildTreasury VALUES (20, 600, 4); \
+  INSERT INTO GuildTreasury VALUES (80, 100, 2); \
+  INSERT INTO GuildTreasury VALUES (20, 800, 1); \
+  INSERT INTO GuildTreasury VALUES (20, 900, 1); \
+  INSERT INTO GuildTreasury VALUES (40, 300, 4); \
+  INSERT INTO GuildTreasury VALUES (30, 300, 10); \
+  INSERT INTO GuildTreasury VALUES (30, 400, 7); \
+  INSERT INTO GuildTreasury VALUES (20, 400, 8); \
+  INSERT INTO GuildTreasury VALUES (40, 200, 6); \
+  INSERT INTO GuildTreasury VALUES (40, 600, 4); \
+  INSERT INTO GuildTreasury VALUES (20, 100, 14); \
+  INSERT INTO GuildTreasury VALUES (40, 800, 2); \
+  INSERT INTO GuildTreasury VALUES (50, 200, 2); \
+  INSERT INTO GuildTreasury VALUES (10, 700, 1); \
   INSERT INTO GuildTreasury VALUES (50, 900, 3); \
-  INSERT INTO TradeTransactions VALUES (1, 2, 4, '2019-04-02 10:01.032', 300); \
+  INSERT INTO GuildTreasury VALUES (30, 100, 16); \
+  INSERT INTO GuildTreasury VALUES (60, 400, 3); \
+  INSERT INTO TradeTransactions VALUES (1, 2, 4, '2019-04-02 10:01.032', 100); \
+  INSERT INTO TradeTransactions VALUES (2, 3, 4, '2019-04-04 10:01.032', 300); \
+  INSERT INTO TradeTransactions VALUES (3, 4, 1, '2019-04-04 11:07.154', 100); \
+  INSERT INTO TradeTransactions VALUES (4, 10, 6, '2019-04-06 10:01.281', 600); \
+  INSERT INTO TradeTransactions VALUES (5, 10, 3, '2019-04-09 10:01.821', 800); \
+  INSERT INTO TradeTransactions VALUES (6, 7, 2, '2019-04-17 10:01.972', 900); \
+  INSERT INTO TradeTransactions VALUES (7, 9, 11, '2019-04-22 10:01.123', 900); \
+  INSERT INTO TradeTransactions VALUES (8, 1, 12, '2019-04-28 10:01.461', 100); \
+  INSERT INTO TradeTransactions VALUES (9, 2, 13, '2019-05-03 14:01.032', 200); \
+  INSERT INTO TradeTransactions VALUES (10, 2, 13, '2019-05-03 14:01.611', 300); \
+  INSERT INTO TradeTransactions VALUES (11, 16, 1, '2019-05-04 05:01.032', 400); \
+  INSERT INTO TradeTransactions VALUES (12, 17, 4, '2019-05-12 22:01.973', 300); \
+  INSERT INTO TradeTransactions VALUES (13, 6, 3, '2019-05-19 16:42.162', 300); \
+  INSERT INTO TradeTransactions VALUES (14, 9, 11, '2019-05-29 10:01.032', 600); \
+  INSERT INTO TradeTransactions VALUES (15, 12, 2, '2019-05-30 12:59.921', 600); \
+  INSERT INTO TradeTransactions VALUES (15, 12, 2, '2019-05-30 13:01.032', 900); \
+  INSERT INTO TradeTransactions VALUES (16, 2, 14, '2019-05-30 13:02.124', 200); \
+  INSERT INTO TradeTransactions VALUES (17, 3, 2, '2019-05-30 13:05.738', 700); \
+  INSERT INTO TradeTransactions VALUES (18, 7, 4, '2019-05-30 13:07.032', 300); \
+  INSERT INTO TradeTransactions VALUES (19, 2, 4, '2019-05-30 13:52.112', 200); \
+  INSERT INTO TradeTransactions VALUES (20, 9, 19, '2019-05-30 13:52.443', 200); \
+  INSERT INTO TradeTransactions VALUES (21, 9, 19, '2019-05-30 14:00.512', 100); \
+  INSERT INTO TradeTransactions VALUES (22, 10, 6, '2019-06-01 01:01.001', 100); \
+  INSERT INTO TradeTransactions VALUES (23, 10, 8, '2019-06-08 12:01.869', 100); \
+  INSERT INTO TradeTransactions VALUES (24, 4, 8, '2019-06-09 08:17.849', 800); \
+  INSERT INTO TradeTransactions VALUES (25, 4, 8, '2019-06-10 10:32.767', 700); \
+  INSERT INTO TradeTransactions VALUES (26, 8, 4, '2019-06-16 14:31.674', 200); \
+  INSERT INTO TradeTransactions VALUES (27, 5, 12, '2019-07-02 10:01.792', 100); \
+  INSERT INTO TradeTransactions VALUES (28, 1, 17, '2019-07-11 10:01.201', 900); \
+  INSERT INTO TradeTransactions VALUES (29, 5, 1, '2019-07-12 10:01.302', 700); \
+  INSERT INTO TradeTransactions VALUES (30, 7, 3, '2019-07-13 10:01.333', 700); \
 ";
 	worker.postMessage({ action: 'exec', sql: commands });
 }
