@@ -147,13 +147,13 @@ function loadBookDB() {
   INSERT INTO TradeTransactions VALUES (19, 2, 4, '2019-05-30 13:52.112', 200); \
   INSERT INTO TradeTransactions VALUES (20, 9, 19, '2019-05-30 13:52.443', 200); \
   INSERT INTO TradeTransactions VALUES (21, 9, 19, '2019-05-30 14:00.512', 100); \
-  INSERT INTO TradeTransactions VALUES (22, 10, 6, '2019-06-01 01:01.001', 100); \
-  INSERT INTO TradeTransactions VALUES (23, 10, 8, '2019-06-08 12:01.869', 100); \
   INSERT INTO TradeTransactions VALUES (24, 4, 8, '2019-06-09 08:17.849', 800); \
   INSERT INTO TradeTransactions VALUES (25, 4, 8, '2019-06-10 10:32.767', 700); \
   INSERT INTO TradeTransactions VALUES (26, 8, 4, '2019-06-16 14:31.674', 200); \
-  INSERT INTO TradeTransactions VALUES (27, 5, 12, '2019-07-02 10:01.792', 100); \
-  INSERT INTO TradeTransactions VALUES (28, 1, 17, '2019-07-11 10:01.201', 900); \
+  INSERT INTO TradeTransactions VALUES (22, 10, 6, '2019-06-21 10:01.001', 100); \
+  INSERT INTO TradeTransactions VALUES (23, 10, 8, '2019-06-21 12:01.869', 300); \
+  INSERT INTO TradeTransactions VALUES (27, 5, 12, '2019-06-21 14:01.792', 100); \
+  INSERT INTO TradeTransactions VALUES (28, 1, 17, '2019-06-21 14:01.821', 900); \
   INSERT INTO TradeTransactions VALUES (29, 5, 1, '2019-07-12 10:01.302', 700); \
   INSERT INTO TradeTransactions VALUES (30, 7, 3, '2019-07-13 10:01.333', 700); \
 ";
