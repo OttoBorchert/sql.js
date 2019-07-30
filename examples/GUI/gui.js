@@ -109,7 +109,6 @@ function loadBookDB() {
   INSERT INTO GuildTreasury VALUES (50, 400, 1); \
   INSERT INTO GuildTreasury VALUES (30, 200, 14); \
   INSERT INTO GuildTreasury VALUES (20, 600, 4); \
-  INSERT INTO GuildTreasury VALUES (80, 100, 2); \
   INSERT INTO GuildTreasury VALUES (20, 800, 1); \
   INSERT INTO GuildTreasury VALUES (20, 900, 1); \
   INSERT INTO GuildTreasury VALUES (40, 300, 4); \
