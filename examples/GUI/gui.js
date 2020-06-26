@@ -222,12 +222,11 @@ var tableCreate = function () {
 function execEditorContents() {
 	// Start the worker in which sql.js will run
 	noerror()
-	//execute(editor.getValue() + ';');
-	execute(commandsElm.value + ';');
+	execute(editor.getValue() + ';');
+	//execute(commandsElm.value + ';');
 }
 //execBtn.addEventListener("click", execEditorContents, true);
 
-/*
 // Add syntax highlighting to the textarea
 var editor = CodeMirror.fromTextArea(commandsElm, {
 	mode: 'text/x-mysql',
@@ -236,10 +235,9 @@ var editor = CodeMirror.fromTextArea(commandsElm, {
 	smartIndent: true,
 	lineNumbers: true,
 	matchBrackets: true,
-	autofocus: true,
+	autofocus: false,
 	extraKeys: {
 		"Ctrl-Enter": execEditorContents,
 		//"Ctrl-S": savedb,
 	}
 });
-*/
