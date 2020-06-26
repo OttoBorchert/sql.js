@@ -4,6 +4,15 @@ var errorElm = document.getElementById('error');
 var commandsElm = document.getElementById('commands');
 var dbFileElm = document.getElementById('dbfile');
 var savedbElm = document.getElementById('savedb');
+
+var worker = new Worker("../../dist/worker.sql-wasm-debug.js");
+worker.onerror = error;
+
+// Open a database
+worker.postMessage({ action: 'open' });
+
+
+
 /*
 // Connect to the HTML element we 'print' to
 function print(text) {
@@ -213,12 +222,6 @@ var tableCreate = function () {
 // Execute the commands when the button is clicked
 function execEditorContents() {
 	// Start the worker in which sql.js will run
-	var worker = new Worker("../../dist/worker.sql-wasm-debug.js");
-	worker.onerror = error;
-
-	// Open a database
-	worker.postMessage({ action: 'open' });
-
 	noerror()
 	execute(editor.getValue() + ';');
 }
