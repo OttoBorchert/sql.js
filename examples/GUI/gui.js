@@ -171,8 +171,9 @@ function noerror() {
 
 // Run a command in the database
 function execute(commands) {
-	var username = document.getElementsByClassName("fs-block")[0];
+	var username = document.getElementsByClassName("fs-block");
 	if (username) {
+		console.log(username)
 		console.log("USERNAME: " + username)
 	}
 	noerror();
