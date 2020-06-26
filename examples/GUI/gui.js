@@ -4,6 +4,7 @@ var errorElm = document.getElementById('error');
 var commandsElm = document.getElementById('commands');
 var dbFileElm = document.getElementById('dbfile');
 var savedbElm = document.getElementById('savedb');
+var testCaseElm = document.getElementById('testcase_output')
 
 var worker = new Worker("../../dist/worker.sql-wasm-debug.js");
 worker.onerror = error;
@@ -171,6 +172,8 @@ function noerror() {
 
 // Run a command in the database
 function execute(commands) {
+	testCaseElm.innerHTML = ""
+
 	var username = document.getElementsByClassName("fs-block");
 	if (username) {
 		console.log(username)
@@ -270,10 +273,20 @@ var checkAsserts = function(result_table, test_list) {
 	result += `You passed ${this.passed} out of ${
 		this.passed + this.failed
 	} tests for ${pct}%`;
-	console.log(result)
 	if (this.failed == 0) {
-		console.log("Codeword is " + code_word)
+		result += "\nCodeword is " + code_word
 	}
+	testCaseElm.innerHTML += result
+}
+
+var addPassMessage = function(message) {
+	output = "<div class='pass'>" + message + "</div>"
+	testCaseElm.innerHTML += output
+}
+
+var addFailMessage = function(message) {
+	output = "<div class='fail'>" + message + "</div>"
+	testCaseElm.innerHTML += output
 }
 
 var testLengthAssert = function(length_type, expected, result_table){ 
@@ -286,16 +299,16 @@ var testLengthAssert = function(length_type, expected, result_table){
 	let res = expected == actual;
 	if (res) {
 		if (length_type == "R") {
-			output = `Pass: ${actual} == ${expected} for number of rows`;
+			addPassMessage(`Pass: ${actual} == ${expected} for number of rows</div>`);
 		} else if (length_type == "C") {
-			output = `Pass: ${actual} == ${expected} for number of columns`;
+			addPassMessage(`Pass: ${actual} == ${expected} for number of columns`);
 		}
 		this.passed++;
 	} else {
 		if (length_type == "R") {
-			output = `Fail: ${actual} == ${expected} for number of rows`;
+			addFailMessage(`Fail: ${actual} == ${expected} for number of rows`);
 		} else if (length_type == "C") {
-			output = `Fail: ${actual} == ${expected} for number of columns`;
+			addFailMessage(`Fail: ${actual} == ${expected} for number of columns`);
 		}
 		this.failed++;
 	}
@@ -327,10 +340,10 @@ var testColumnAssert = function(loc, oper, expected, result_table){
 
 	let res = operators[oper](actual, expected);
 	if (res) {
-		output = `Pass: ${actual} ${oper} ${expected} for column name in column ${loc}`;
+		addPassMessage(`Pass: ${actual} ${oper} ${expected} for column name in column ${loc}`);
 		this.passed++;
 	} else {
-		output = `Fail: ${actual} ${oper} ${expected} for column name in column ${loc}`;
+		addFailMessage(`Fail: ${actual} ${oper} ${expected} for column name in column ${loc}`);
 		this.failed++;
 	}
 	return output;
@@ -343,10 +356,10 @@ var testValueAssert = function (row, col, oper, expected, result_table){
 
 	let res = operators[oper](actual, expected);
 	if (res) {
-		output = `Pass: ${actual} ${oper} ${expected} in row ${row} column ${result_table.columns[col]}`;
+		addPassMessage(`Pass: ${actual} ${oper} ${expected} in row ${row} column ${result_table.columns[col]}`);
 		this.passed++;
 	} else {
-		output = `Fail: ${actual} ${oper} ${expected} in row ${row} column ${result_table.columns[col]}`;
+		addFailMessage(`Fail: ${actual} ${oper} ${expected} in row ${row} column ${result_table.columns[col]}`);
 		this.failed++;
 	}
 	return output;

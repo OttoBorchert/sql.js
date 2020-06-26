@@ -8,6 +8,18 @@
   <link rel="stylesheet" href="demo.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/codemirror.js"></script>
 
+  <style>
+    .testcase_output {
+      background-color: lightgray;
+    }
+    .pass {
+      background-color: lightgreen;
+    }
+    .fail {
+      background-color: pink;
+    }
+
+  </style>
 </head>
 
 <body onload="loadBookDB()">
@@ -27,10 +39,12 @@ FROM Players;
     <button id='savedb' class="button">Save the db</button>
     <label class="button">Load an SQLite database file: <input type='file' id='dbfile'></label>
     -->
-
+    <p></p>
     <div id="error" class="error"></div>
 
-    <pre id="output">Results will be displayed here</pre>
+    <div id="testcase_output" class="testcase_output">Test case results will be displayed here</div>
+
+    <pre id="output">Database output will be displayed here</pre>
   </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/mode/sql/sql.min.js"></script>
