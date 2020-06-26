@@ -222,7 +222,7 @@ function execEditorContents() {
 	noerror()
 	execute(editor.getValue() + ';');
 }
-execBtn.addEventListener("click", execEditorContents, true);
+//execBtn.addEventListener("click", execEditorContents, true);
 
 // Add syntax highlighting to the textarea
 var editor = CodeMirror.fromTextArea(commandsElm, {
