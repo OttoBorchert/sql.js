@@ -10,8 +10,8 @@
 
 </head>
 
-<body>
-  <h1>Online SQL interpreter - Testing 2</h1>
+<body onload="loadBookDB()">
+  <h1>Online SQL interpreter</h1>
 
   <main>
     <label for='commands'>Enter some SQL</label>
@@ -22,7 +22,7 @@ SELECT *
 FROM Players;
     </textarea>
 
-    <button onclick="execEditorContents()" id="execute" class="button">Execute</button>
+    <button id="execute" class="button">Execute</button>
     <!--
     <button id='savedb' class="button">Save the db</button>
     <label class="button">Load an SQLite database file: <input type='file' id='dbfile'></label>
