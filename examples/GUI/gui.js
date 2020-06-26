@@ -11,8 +11,6 @@ worker.onerror = error;
 // Open a database
 worker.postMessage({ action: 'open' });
 
-
-
 // Connect to the HTML element we 'print' to
 function print(text) {
 	outputElm.innerHTML = text.replace(/\n/g, '<br>');
@@ -174,6 +172,7 @@ function noerror() {
 // Run a command in the database
 function execute(commands) {
 	noerror();
+	tic();
 	worker.onmessage = function (event) {
 		if (event.data.error)
 		{
@@ -182,7 +181,9 @@ function execute(commands) {
 		}
 
 		var results = event.data.results;
+		toc("Executing SQL");
 
+		tic();
 		outputElm.innerHTML = "";
 		for (var i = 0; i < results.length; i++) {
 			outputElm.appendChild(tableCreate(results[i].columns, results[i].values));
@@ -225,6 +226,15 @@ function execEditorContents() {
 	execute(editor.getValue() + ';');
 }
 execBtn.addEventListener("click", execEditorContents, true);
+
+// Performance measurement functions
+var tictime;
+if (!window.performance || !performance.now) { window.performance = { now: Date.now } }
+function tic() { tictime = performance.now() }
+function toc(msg) {
+	var dt = performance.now() - tictime;
+	console.log((msg || 'toc') + ": " + dt + "ms");
+}
 
 // Add syntax highlighting to the textarea
 var editor = CodeMirror.fromTextArea(commandsElm, {
