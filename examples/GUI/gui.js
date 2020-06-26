@@ -4,7 +4,7 @@ var errorElm = document.getElementById('error');
 var commandsElm = document.getElementById('commands');
 var dbFileElm = document.getElementById('dbfile');
 var savedbElm = document.getElementById('savedb');
-
+/*
 // Connect to the HTML element we 'print' to
 function print(text) {
 	outputElm.innerHTML = text.replace(/\n/g, '<br>');
@@ -209,7 +209,7 @@ var tableCreate = function () {
 		return tbl;
 	}
 }();
-
+*/
 // Execute the commands when the button is clicked
 function execEditorContents() {
 	// Start the worker in which sql.js will run
@@ -224,6 +224,7 @@ function execEditorContents() {
 }
 //execBtn.addEventListener("click", execEditorContents, true);
 
+/*
 // Add syntax highlighting to the textarea
 var editor = CodeMirror.fromTextArea(commandsElm, {
 	mode: 'text/x-mysql',
@@ -238,3 +239,4 @@ var editor = CodeMirror.fromTextArea(commandsElm, {
 		//"Ctrl-S": savedb,
 	}
 });
+*/
