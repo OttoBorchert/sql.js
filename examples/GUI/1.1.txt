@@ -1,0 +1,5 @@
+Monkey
+V 0,0 == 10
+C 0 == guildID
+L R 8
+L C 5

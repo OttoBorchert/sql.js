@@ -171,6 +171,10 @@ function noerror() {
 
 // Run a command in the database
 function execute(commands) {
+	var username = document.getElementsByClassName("fs-block");
+	if (username) {
+		console.log("USERNAME: " + username)
+	}
 	noerror();
 	tic();
 	worker.onmessage = function (event) {
@@ -186,6 +190,7 @@ function execute(commands) {
 		tic();
 		outputElm.innerHTML = "";
 		for (var i = 0; i < results.length; i++) {
+			runAsserts(results[i])
 			outputElm.appendChild(tableCreate(results[i].columns, results[i].values));
 		}
 		toc("Displaying results");
@@ -194,6 +199,158 @@ function execute(commands) {
 	worker.postMessage({ action: 'exec', sql: commands });
 	outputElm.textContent = "Fetching results...";
 }
+
+var runAsserts = function(results) {
+	const params = new URLSearchParams(window.location.search)
+	if (params.has('q')) {
+		var question = params.get('q')
+
+		// What I'd really like to do is load a file with the assert list
+		let url = question + '.txt';
+		let request = new XMLHttpRequest();
+		request.open('GET', url);
+		request.responseType = 'text';
+		request.onload = function() {
+			checkAsserts(results, request.response)
+		  };
+		request.send()
+	}
+}
+
+var checkAsserts = function(result_table, test_list) {
+	var tests = test_list.split(/\n/);
+	this.code_word = tests.shift()
+	this.passed = 0;
+	this.failed = 0;
+	// Tests should be of the form
+	// assert row,col oper value for example
+	// assert 4,4 == 3
+	var result = "";
+	for (let test of tests) {
+		let wlist = test.split(/\s+/);
+		console.log(wlist)
+		let assertType = wlist.shift();
+		if (assertType == 'V') {
+			let loc = wlist.shift();
+			let oper = wlist.shift();
+			let expected = wlist.join(" ");
+			let [row, col] = loc.split(",");
+			result += this.testValueAssert(
+				row,
+				col,
+				oper,
+				expected,
+				result_table
+			);
+		} else if (assertType == "C") {
+			let loc = wlist.shift();
+			let oper = wlist.shift();
+			let expected = wlist.join(" ").trim();
+			result += this.testColumnAssert(
+				loc,
+				oper,
+				expected,
+				result_table
+			);
+
+		} else if (assertType == "L") {
+			let length_type = wlist.shift();
+			let expected = wlist.shift();
+			result += this.testLengthAssert(
+				length_type,
+				expected,
+				result_table
+			);
+		}
+		result += "\n";
+	}
+	let pct = (100 * this.passed) / (this.passed + this.failed);
+	pct = pct.toLocaleString(undefined, { maximumFractionDigits: 2 });
+	result += `You passed ${this.passed} out of ${
+		this.passed + this.failed
+	} tests for ${pct}%`;
+	console.log(result)
+	if (this.failed == 0) {
+		console.log("Codeword is " + code_word)
+	}
+}
+
+var testLengthAssert = function(length_type, expected, result_table){ 
+	if (length_type == "R") {
+		var actual = result_table.values.length
+	} else if (length_type == "C") {
+		var actual = result_table.columns.length
+	}
+	let output = "";
+	let res = expected == actual;
+	if (res) {
+		if (length_type == "R") {
+			output = `Pass: ${actual} == ${expected} for number of rows`;
+		} else if (length_type == "C") {
+			output = `Pass: ${actual} == ${expected} for number of columns`;
+		}
+		this.passed++;
+	} else {
+		if (length_type == "R") {
+			output = `Fail: ${actual} == ${expected} for number of rows`;
+		} else if (length_type == "C") {
+			output = `Fail: ${actual} == ${expected} for number of columns`;
+		}
+		this.failed++;
+	}
+	return output;
+}
+
+const operators = {
+	"==": function (operand1, operand2) {
+		return operand1 == operand2;
+	},
+	"!=": function (operand1, operand2) {
+		return operand1 != operand2;
+	},
+	">": function (operand1, operand2) {
+		return operand1 > operand2;
+	},
+	"<": function (operand1, operand2) {
+		return operand1 > operand2;
+	},
+};
+
+
+var testColumnAssert = function(loc, oper, expected, result_table){ 
+	let actual = result_table.columns[loc];
+	let output = "";
+	console.log(actual == expected)
+	console.log("'" + actual + "'")
+	console.log("'" + expected + "'")
+
+	let res = operators[oper](actual, expected);
+	if (res) {
+		output = `Pass: ${actual} ${oper} ${expected} for column name in column ${loc}`;
+		this.passed++;
+	} else {
+		output = `Fail: ${actual} ${oper} ${expected} for column name in column ${loc}`;
+		this.failed++;
+	}
+	return output;
+
+}
+
+var testValueAssert = function (row, col, oper, expected, result_table){
+	let actual = result_table.values[row][col];
+	let output = "";
+
+	let res = operators[oper](actual, expected);
+	if (res) {
+		output = `Pass: ${actual} ${oper} ${expected} in row ${row} column ${result_table.columns[col]}`;
+		this.passed++;
+	} else {
+		output = `Fail: ${actual} ${oper} ${expected} in row ${row} column ${result_table.columns[col]}`;
+		this.failed++;
+	}
+	return output;
+}
+
 
 // Create an HTML table
 var tableCreate = function () {
