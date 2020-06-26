@@ -13,7 +13,6 @@ worker.postMessage({ action: 'open' });
 
 
 
-/*
 // Connect to the HTML element we 'print' to
 function print(text) {
 	outputElm.innerHTML = text.replace(/\n/g, '<br>');
@@ -218,7 +217,7 @@ var tableCreate = function () {
 		return tbl;
 	}
 }();
-*/
+
 // Execute the commands when the button is clicked
 function execEditorContents() {
 	// Start the worker in which sql.js will run
