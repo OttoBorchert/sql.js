@@ -223,9 +223,8 @@ function execEditorContents() {
 	// Start the worker in which sql.js will run
 	noerror()
 	execute(editor.getValue() + ';');
-	//execute(commandsElm.value + ';');
 }
-//execBtn.addEventListener("click", execEditorContents, true);
+execBtn.addEventListener("click", execEditorContents, true);
 
 // Add syntax highlighting to the textarea
 var editor = CodeMirror.fromTextArea(commandsElm, {
