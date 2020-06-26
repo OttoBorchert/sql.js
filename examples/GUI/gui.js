@@ -173,7 +173,6 @@ function noerror() {
 // Run a command in the database
 function execute(commands) {
 	noerror();
-	tic();
 	worker.onmessage = function (event) {
 		if (event.data.error)
 		{
@@ -182,9 +181,7 @@ function execute(commands) {
 		}
 
 		var results = event.data.results;
-		toc("Executing SQL");
 
-		tic();
 		outputElm.innerHTML = "";
 		for (var i = 0; i < results.length; i++) {
 			outputElm.appendChild(tableCreate(results[i].columns, results[i].values));
@@ -227,16 +224,7 @@ function execEditorContents() {
 }
 execBtn.addEventListener("click", execEditorContents, true);
 
-// Performance measurement functions
-var tictime;
-if (!window.performance || !performance.now) { window.performance = { now: Date.now } }
-function tic() { tictime = performance.now() }
-function toc(msg) {
-	var dt = performance.now() - tictime;
-	console.log((msg || 'toc') + ": " + dt + "ms");
-}
-
-// Add syntax highlihjting to the textarea
+// Add syntax highlighting to the textarea
 var editor = CodeMirror.fromTextArea(commandsElm, {
 	mode: 'text/x-mysql',
 	viewportMargin: Infinity,
@@ -250,50 +238,3 @@ var editor = CodeMirror.fromTextArea(commandsElm, {
 		//"Ctrl-S": savedb,
 	}
 });
-
-/*
-// Not loading or saving anymore
-// Load a db from a file
-dbFileElm.onchange = function () {
-	var f = dbFileElm.files[0];
-	var r = new FileReader();
-	r.onload = function () {
-		worker.onmessage = function () {
-			toc("Loading database from file");
-			// Show the schema of the loaded database
-			editor.setValue("SELECT `name`, `sql`\n  FROM `sqlite_master`\n  WHERE type='table';");
-			execEditorContents();
-		};
-		tic();
-		try {
-			worker.postMessage({ action: 'open', buffer: r.result }, [r.result]);
-		}
-		catch (exception) {
-			worker.postMessage({ action: 'open', buffer: r.result });
-		}
-	}
-	r.readAsArrayBuffer(f);
-}
-
-// Save the db to a file
-function savedb() {
-	worker.onmessage = function (event) {
-		toc("Exporting the database");
-		var arraybuff = event.data.buffer;
-		var blob = new Blob([arraybuff]);
-		var a = document.createElement("a");
-		document.body.appendChild(a);
-		a.href = window.URL.createObjectURL(blob);
-		a.download = "sql.db";
-		a.onclick = function () {
-			setTimeout(function () {
-				window.URL.revokeObjectURL(a.href);
-			}, 1500);
-		};
-		a.click();
-	};
-	tic();
-	worker.postMessage({ action: 'export' });
-}
-savedbElm.addEventListener("click", savedb, true);
-*/
