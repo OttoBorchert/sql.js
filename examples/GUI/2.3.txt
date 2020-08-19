@@ -1,0 +1,7 @@
+spicy
+V 0,0 == 5
+V 0,1 == sword
+C 0 == minLevel
+C 1 == type
+L R 9
+L C 2
