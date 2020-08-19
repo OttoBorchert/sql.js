@@ -1,0 +1,5 @@
+lovely
+V 0,0 == Iron Sword
+C 0 == itemName
+L R 5
+L C 1
