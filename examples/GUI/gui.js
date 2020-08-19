@@ -413,7 +413,7 @@ var editor = CodeMirror.fromTextArea(commandsElm, {
 	viewportMargin: Infinity,
 	indentWithTabs: true,
 	smartIndent: true,
-	lineNumbers: true,
+	lineNumbers: false,
 	matchBrackets: true,
 	autofocus: false,
 	extraKeys: {
