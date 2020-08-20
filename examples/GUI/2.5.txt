@@ -1,6 +1,6 @@
 leaves
 V 1,1 == Alyma
-V 4,4 == coins
+V 4,4 == 742
 V 4,2 == 11
 C 0 == playerID
 C 2 == playerLevel
