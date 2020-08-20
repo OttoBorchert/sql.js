@@ -1,0 +1,11 @@
+roof
+V 0,1 == Elyse
+V 1,1 == Alyma
+V 2,1 == Radix
+V 3,1 == Cait
+V 4,1 == Mintee
+V 5,1 == Wraithse
+V 6,1 == Sava
+C 0 == playerID
+L R 7
+L C 1
