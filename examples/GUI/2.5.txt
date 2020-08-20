@@ -1,8 +1,8 @@
 leaves
 V 1,1 == Alyma
-V 4,4 == 742
-V 4,2 == 11
+V 4,4 == 951
+V 4,2 == 12
 C 0 == playerID
 C 2 == playerLevel
-L R 10
+L R 7
 L C 5
