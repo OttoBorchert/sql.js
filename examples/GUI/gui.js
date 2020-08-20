@@ -74,7 +74,7 @@ function loadBookDB() {
   INSERT INTO Players VALUES (8, 'Cait', 11, NULL, 742); \
   INSERT INTO Players VALUES (9, 'Mintee', 19, 30, 889); \
   INSERT INTO Players VALUES (10, 'Wraithse', 12, 30, 951); \
-  INSERT INTO Players VALUES (11, 'Plucki', 11, 40, 112); \
+  INSERT INTO Players VALUES (11, 'Plucki', 10, 40, 112); \
   INSERT INTO Players VALUES (12, 'Sava', 15, NULL, 1021); \
   INSERT INTO Players VALUES (13, 'Vera', 9, 50, 831); \
   INSERT INTO Players VALUES (14, 'Aventop', 3, 60, 1); \
