@@ -6,6 +6,6 @@ V 3,0 == Cait
 V 4,0 == Mintee
 V 5,0 == Wraithse
 V 6,0 == Sava
-C 0 == playerID
+C 0 == playerName
 L R 7
 L C 1
