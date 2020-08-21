@@ -1,0 +1,9 @@
+spider
+V 0,1 == Alyma
+V 3,1 == Apl
+V 3,3 == NULL
+V 5,1 == Cait
+V 5,3 == NULL
+C 1 == playerName
+L R 17
+L C 5
