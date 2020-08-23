@@ -1,0 +1,5 @@
+savagely
+V 0,0 == Radix
+V 1,0 == Mintee
+V 0,1 == 529
+V 1,1 == 889
