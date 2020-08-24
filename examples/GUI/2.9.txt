@@ -1,6 +1,6 @@
 light
 V 0,1 == Winds of Grey
-V 1,1 = Vengeful Warriors
+V 1,1 == Vengeful Warriors
 C 0 == guildID
 L R 2
 L C 5
