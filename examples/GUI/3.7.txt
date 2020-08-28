@@ -1,0 +1,9 @@
+plaid
+L R 9
+L C 5
+V 0,1 == Steel Battleaxe
+V 0,4 == 2
+V 1,1 == Bronze Axe
+V 1,4 == 1
+V 7,1 == Iron Staff
+V 7,4 == 2
