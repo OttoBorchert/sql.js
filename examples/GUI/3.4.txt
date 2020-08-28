@@ -1,0 +1,7 @@
+heal
+L R 5
+V 0,1 == Iron Sword
+V 0,2 == 5
+V 1,1 == Steel Battleaxe
+V 1,2 == 8
+L C 5
