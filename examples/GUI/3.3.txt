@@ -1,4 +1,4 @@
-lovely
+crash
 L R 9
 V 0,1 == Steel Dagger
 V 0,2 == 1
