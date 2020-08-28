@@ -1,0 +1,9 @@
+lovely
+L R 9
+V 0,1 == Steel Dagger
+V 0,2 == 1
+V 6,1 == Bronze Bow
+V 6,2 == 10
+V 8,1 == Dwarven Axe
+V 8,2 == 18
+L C 5
