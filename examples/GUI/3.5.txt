@@ -1,0 +1,8 @@
+slippery
+V 0,1 == Elyse
+V 0,2 == 21
+V 8,1 == Kennis
+V 8,2 == 8
+V 18,1 == Xylo
+V 18,2 == 1
+L R 19
