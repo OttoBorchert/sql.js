@@ -1,0 +1,7 @@
+swarm
+L R 5
+L C 5
+V 1,1 == Vengeful Warriors
+V 1,3 == 2019-05-11
+V 2,1 == Shocking Power
+V 2,3 == 2019-05-04
