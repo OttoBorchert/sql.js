@@ -1,0 +1,8 @@
+deck
+L R 1
+L C 5
+V 0,0 == 900
+V 0,1 == Dwarven Axe
+V 0,2 == 18
+V 0,3 == axe
+V 0,4 == 1
