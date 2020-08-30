@@ -1,0 +1,7 @@
+shade
+L R 4
+L C 1
+V 0,0 == Apl
+V 1,0 == Xylo
+V 2,0 == Blothie
+V 3,0 == Babbage
