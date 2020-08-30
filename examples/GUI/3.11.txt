@@ -1,0 +1,12 @@
+hefty
+L R 5
+L C 5
+V 0,0 == 16
+V 0,1 == Rydomin
+V 0,2 == 6
+V 0,3 == 60
+V 0,4 == 114
+V 1,1 == Sulin
+V 2,1 == Penni
+V 3,1 == Kylomer
+V 4,1 == Aventop
