@@ -1,0 +1,6 @@
+dodge
+L R 5
+L C 1
+V 0,0 == sword
+V 2,0 == dagger
+V 4,0 == axe
