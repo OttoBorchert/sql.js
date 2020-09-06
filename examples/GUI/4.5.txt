@@ -1,0 +1,7 @@
+mirror
+L R 15
+L C 1
+C 0 == playerLevel
+V 0,0 == 1
+V 6,0 == 8
+V 14,0 == 21
