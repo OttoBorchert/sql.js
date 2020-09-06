@@ -1,0 +1,9 @@
+power
+L R 5
+L C 2
+V 0,0 == 1
+V 0,1 == staff
+V 2,0 == 2
+V 2,1 == bow
+V 4,0 == 3
+V 4,1 == axe
