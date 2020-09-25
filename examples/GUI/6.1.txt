@@ -1,0 +1,12 @@
+bloom
+L R 4
+L C 8
+C 0 == guildID
+C 1 == guildName
+C 6 == itemID
+V 0,0 == 30
+V 0,1 == Shimmering Lights
+V 0,6 == 200
+V 2,0 == 30
+V 2,1 == Shimmering Lights
+V 2,6 == 400
