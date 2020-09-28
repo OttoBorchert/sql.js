@@ -1,8 +1,8 @@
 fans
 L R 16
 L C 2
-C 0 playerName
-C 1 guildName
+C 0 == playerName
+C 1 == guildName
 V 0,0 == Xylo
 V 0,1 == Bitter Power Pals
 V 4,0 == Rydomin
