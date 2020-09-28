@@ -1,0 +1,7 @@
+fastest
+L R 8
+L C 2
+V 2,0 == Bronze Axe 
+V 2,1 == 19
+V 7,0 == Iron Staff
+V 7,1 == 3
