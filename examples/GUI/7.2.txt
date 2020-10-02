@@ -1,0 +1,11 @@
+baffled
+L R 20
+L C 2
+C 0 == playerName
+C 1 == guildName
+V 0,0 == NULL
+V 0,1 == Vengeful Warriors
+V 6,0 == Cait
+V 6,1 == NULL
+V 12,0 == Plucki
+V 12,1 == Gray Wolf Clan
