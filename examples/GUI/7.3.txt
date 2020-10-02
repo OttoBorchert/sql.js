@@ -1,0 +1,15 @@
+crawfish
+L R 25
+L C 3
+C 0 == itemName
+C 1 == guildName
+C 2 == quantity
+V 0,0 == Iron Sword
+V 0,1 == Grey Mountaineers
+V 0,2 == 6
+V 10,0 == Steel Bow
+V 10,1 == Shimmering Light
+V 10,2 == 10
+V 20,0 == Iron Staff
+V 20,1 == Shocking Power
+V 20,2 == 1
