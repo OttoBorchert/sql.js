@@ -1,4 +1,6 @@
 violin
+L R 3
+L C 2
 V 0,0 == Steel Dagger
 V 0,1 == 2020-10-13 10:01:33
 V 1,0 == Steel Dagger
