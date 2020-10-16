@@ -1,0 +1,7 @@
+nephew
+L R 8
+L C 1
+C 0 == Guild Summary
+V 0,0 == Grey Warriors (20) Leader: Elyse
+V 4,0 == Vengeful Warriors (4) Leader: No Leader
+V 7,0 == Shimmering Light (1) Leader: Mintee
