@@ -1,0 +1,6 @@
+sponge
+L R 6
+L C 1
+V 0,0 == Grey Warriors (20) Leader: Elyse
+V 4,0 == Gray Wolf Clan (2) Leader: Plucki
+V 5,0 == Shimmering Light (1) Leader: Mintee
