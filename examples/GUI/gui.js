@@ -87,7 +87,7 @@ function loadBookDB() {
   INSERT INTO Guilds VALUES (20, 'Shocking Power', 18, '2020-10-04', 2); \
   INSERT INTO Guilds VALUES (30, 'Shimmering Light', 1, '2020-08-19', 9); \
   INSERT INTO Guilds VALUES (40, 'Gray Wolf Clan', 2, '2020-08-20', 11); \
-  INSERT INTO Guilds VALUES (50, 'Winds of Grey', 4, '2020-08-25', 13); \
+  INSERT INTO Guilds VALUES (50, 'Winds of Grey', 4, '2020-10-15', 13); \
   INSERT INTO Guilds VALUES (60, 'Grey Mountaineers', 7, '2020-06-01', 17); \
   INSERT INTO Guilds VALUES (70, 'Bitter Power Pals', 3, '2020-07-25', NULL); \
   INSERT INTO Guilds VALUES (80, 'Vengeful Warriors', 4, '2020-10-11', NULL); \
