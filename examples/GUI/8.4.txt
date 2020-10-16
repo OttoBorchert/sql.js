@@ -1,0 +1,11 @@
+entrust
+L R 30
+L C 4
+V 0,0 == Bronze Axe
+V 0,1 == Rydomin
+V 0,2 == Elyse
+V 0,3 == 2019-05-04 05:01:03
+V 1,15 == Alyma
+V 2,15 == Aventop
+V 1,16 == Alyma
+V 2,16 == Blothie
