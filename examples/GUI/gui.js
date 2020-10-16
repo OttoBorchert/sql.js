@@ -83,14 +83,14 @@ function loadBookDB() {
   INSERT INTO Players VALUES (17, 'Sulin', 5, 60, 117); \
   INSERT INTO Players VALUES (18, 'Xylo', 1, 70, 2); \
   INSERT INTO Players VALUES (19, 'Penni', 4, 20, 201); \
-  INSERT INTO Guilds VALUES (10, 'Grey Warriors', 20, '2019-05-03', 1); \
-  INSERT INTO Guilds VALUES (20, 'Shocking Power', 18, '2019-05-04', 2); \
-  INSERT INTO Guilds VALUES (30, 'Shimmering Light', 1, '2019-04-19', 9); \
-  INSERT INTO Guilds VALUES (40, 'Gray Wolf Clan', 2, '2019-04-20', 11); \
-  INSERT INTO Guilds VALUES (50, 'Winds of Grey', 4, '2019-04-25', 13); \
-  INSERT INTO Guilds VALUES (60, 'Grey Mountaineers', 7, '2019-06-01', 17); \
-  INSERT INTO Guilds VALUES (70, 'Bitter Power Pals', 3, '2019-04-25', NULL); \
-  INSERT INTO Guilds VALUES (80, 'Vengeful Warriors', 4, '2019-05-11', NULL); \
+  INSERT INTO Guilds VALUES (10, 'Grey Warriors', 20, '2020-10-03', 1); \
+  INSERT INTO Guilds VALUES (20, 'Shocking Power', 18, '2020-10-04', 2); \
+  INSERT INTO Guilds VALUES (30, 'Shimmering Light', 1, '2020-08-19', 9); \
+  INSERT INTO Guilds VALUES (40, 'Gray Wolf Clan', 2, '2020-08-20', 11); \
+  INSERT INTO Guilds VALUES (50, 'Winds of Grey', 4, '2020-08-25', 13); \
+  INSERT INTO Guilds VALUES (60, 'Grey Mountaineers', 7, '2020-06-01', 17); \
+  INSERT INTO Guilds VALUES (70, 'Bitter Power Pals', 3, '2020-07-25', NULL); \
+  INSERT INTO Guilds VALUES (80, 'Vengeful Warriors', 4, '2020-10-11', NULL); \
   INSERT INTO Items VALUES (100, 'Iron Sword', 5, 'sword', 1); \
   INSERT INTO Items VALUES (200, 'Steel Battleaxe', 8, 'axe', 2); \
   INSERT INTO Items VALUES (300, 'Steel Bow', 7, 'bow', 2); \
