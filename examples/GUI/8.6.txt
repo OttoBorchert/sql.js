@@ -1,0 +1,5 @@
+stable
+V 0,0 == Shocking Power
+V 0,1 == 3094
+V 1,0 == Grey Warriors
+V 1,1 == 1687
