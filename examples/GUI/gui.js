@@ -124,7 +124,7 @@ function loadBookDB() {
   INSERT INTO GuildTreasury VALUES (50, 900, 3); \
   INSERT INTO GuildTreasury VALUES (30, 100, 16); \
   INSERT INTO GuildTreasury VALUES (60, 400, 3); \
-  INSERT INTO TradeTransactions VALUES (1, 2, 4, '2020-10-14 10:01:03', 100); \
+  INSERT INTO TradeTransactions VALUES (1, 2, 4, '2020-10-11 10:01:03', 100); \
   INSERT INTO TradeTransactions VALUES (2, 3, 4, '2020-07-04 10:01:04', 300); \
   INSERT INTO TradeTransactions VALUES (3, 4, 1, '2020-07-04 10:01:05', 100); \
   INSERT INTO TradeTransactions VALUES (4, 10, 6, '2020-07-06 10:01:28', 600); \
