@@ -1,0 +1,4 @@
+comet
+L R 10
+L C 1
+V 3,0 == Golden Gun
