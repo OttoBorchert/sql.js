@@ -1,0 +1,7 @@
+bite
+L R 9
+L C 5
+V 7,1 == Whims of Glory
+V 7,2 == 1
+V 7,3 == 2020-10-24
+V 7,4 == NULL
