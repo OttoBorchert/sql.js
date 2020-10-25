@@ -1,0 +1,11 @@
+mouth
+L R 4
+L C 2
+V 0,0 == Shimmering Light
+V 0,1 == 32
+V 1,0 == Shocking Power
+V 1,1 == 28
+V 2,0 == Grey Warriors
+V 2,1 == 24
+V 3,0 == Grey Mountaineers
+V 3,1 == 12
