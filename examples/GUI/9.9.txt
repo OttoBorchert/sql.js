@@ -3,7 +3,7 @@ L R 21
 L C 3
 V 0,0 == Gray Wolf Clan
 V 0,1 == Iron Staff
-V 0,2 = 2
+V 0,2 == 2
 V 6,0 == Grey Warriors
 V 6,1 == Iron Sword
 V 7,0 == Grey Warriors
