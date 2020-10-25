@@ -1,0 +1,6 @@
+team
+L R 7
+L C 1
+V 0,0 == Winds of Grey
+V 1,0 == Shocking Power
+V 6,0 == Bitter Power Pals
