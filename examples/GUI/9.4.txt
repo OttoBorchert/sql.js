@@ -1,0 +1,6 @@
+double
+L R 3
+L C 2
+V 0,0 == Kylomer
+V 0,1 == Shimmering Light
+V 1,0 == Mintee
